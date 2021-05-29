@@ -6,7 +6,7 @@ provide-module wezterm %{
 
 	#ensure that we're running on wezterm
 	evaluate-commands %sh{
-		[ -z "${kak_opt_windowing_modules}" ] || [ "$TERM_PROGRAM" = "WezTerm" ] || echo 'fail WezTerm not detected'
+		[ "$TERM_PROGRAM" = "WezTerm" ] || echo 'fail WezTerm not detected'
 	}
 
 
