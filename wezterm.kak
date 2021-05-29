@@ -16,7 +16,7 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane "$@"
+			wezterm cli split-pane --cwd "$PWD" "$@" 
 		}
 	}
 
@@ -26,7 +26,7 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane --horizontal "$@"
+			wezterm cli split-pane --horizontal --cwd "$PWD" "$@" 
 		}
 	}
 
