@@ -4,8 +4,8 @@ Provides basic [WezTerm](https://github.com/wez/wezterm) integration for Kakoune
 # Installation
 With plug.kak add the following to your kakrc:
 
-    plug Anomalocaridid/wezterm.kak demand wezterm config %{
-        wezterm-integration-enable
+    plug Anomalocaridid/wezterm.kak demand "wezterm" %{
+        hook -once global KakBegin .* wezterm-integration-enable
     }
 
 Otherwise, add it to your autoload folder or source it manually, making sure to add `require-module wezterm` to your kakrc.
