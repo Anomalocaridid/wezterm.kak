@@ -30,7 +30,6 @@ provide-module wezterm %{
 		}
 	}
 
-	# TODO
 	define-command wezterm-terminal-window -params 1.. -shell-completion -docstring '
 		wezterm-terminal-window <program> [<arguments>]: create a new terminal as a wezterm window
 		The program passed as argument will be executed in the new terminal' \
@@ -40,11 +39,14 @@ provide-module wezterm %{
 		}
 	}
 
-	# TODO
-	# define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
-	# 	wezterm-terminal-tab <program> [<arguments>]: create a new terminal as a wezterm tab
-	# 	The program passed as argument will be executed in the new terminal' \
-	# %{}
+	define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
+		wezterm-terminal-tab <program> [<arguments>]: create a new terminal as a wezterm tab
+		The program passed as argument will be executed in the new terminal' \
+	%{
+		nop %sh{
+			wezterm cli spawn --cwd "$PWD" -- "$@"
+		}
+	}
 
 	# TODO
 	# define-command wezterm-focus -params ..1 -client-completion -docstring '
@@ -57,7 +59,7 @@ provide-module wezterm %{
 	%{
 		alias global terminal wezterm-terminal-vertical
 		alias global terminal-window wezterm-terminal-window
-		# alias global terminal-tab wezterm-terminal-tab
+		alias global terminal-tab wezterm-terminal-tab
 		# alias global focus wezterm-focus 
 	}
 }
