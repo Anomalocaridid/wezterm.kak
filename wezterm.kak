@@ -16,7 +16,7 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane --cwd "$PWD" "$@" 
+			wezterm cli split-pane --cwd "$PWD" -- "$@" 
 		}
 	}
 
@@ -26,15 +26,19 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane --horizontal --cwd "$PWD" "$@" 
+			wezterm cli split-pane --horizontal --cwd "$PWD" -- "$@" 
 		}
 	}
 
 	# TODO
-	# define-command wezterm-terminal-window -params 1.. -shell-completion -docstring '
-	# 	wezterm-terminal-window <program> [<arguments>]: create a new terminal as a wezterm window
-	# 	The program passed as argument will be executed in the new terminal' \
-	# %{}
+	define-command wezterm-terminal-window -params 1.. -shell-completion -docstring '
+		wezterm-terminal-window <program> [<arguments>]: create a new terminal as a wezterm window
+		The program passed as argument will be executed in the new terminal' \
+	%{
+		nop %sh{
+			wezterm start --cwd "$PWD" -- "$@" &>/dev/null &
+		}
+	}
 
 	# TODO
 	# define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
@@ -52,6 +56,7 @@ provide-module wezterm %{
 		wezterm-integration-enable: enable aliases for wezterm integration' \
 	%{
 		alias global terminal wezterm-terminal-vertical
+		alias global terminal-window wezterm-terminal-window
 		# alias global terminal-tab wezterm-terminal-tab
 		# alias global focus wezterm-focus 
 	}
