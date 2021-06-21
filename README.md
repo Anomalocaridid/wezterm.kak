@@ -11,7 +11,7 @@ With [plug.kak](https://github.com/andreyorst/plug.kak), add the following to yo
 Otherwise, add it to your autoload folder or source it manually, making sure to add `wezterm-integration-enable` to your kakrc.
 
 # Features
-Currently, only splitting the window into panes, and opening a command in a new tab or window are supported. I was unable to find a way to use WezTerm\`s command-line interface to focus a given client or send text to a repl. Since WezTerm is fairly new, that functionality may not even be currently supported yet.
+Currently, only splitting the window into panes, and opening a command in a new tab or window are supported. I was unable to find a way to use WezTerm's command-line interface to focus a given client or send text to a repl. Since WezTerm is fairly new, that functionality may not even be currently supported yet.
 
 ## Commands
 * `wezterm-integration-enable` - sets the other commands' aliases
