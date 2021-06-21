@@ -1,17 +1,17 @@
 # wezterm.kak
-# Provides basic wezterm integration for Kakoune
+# Provides basic WezTerm integration for Kakoune
 # Inspired by Kakoune's included windowing modules
 
 provide-module wezterm %{
 
-	# ensure that we're running on wezterm
+	# ensure that we're running on WezTerm
 	evaluate-commands %sh{
 		[ "$TERM_PROGRAM" = "WezTerm" ] || echo 'fail WezTerm not detected'
 	}
 
 
 	define-command wezterm-terminal-vertical -params 1.. -shell-completion -docstring '
-		wezterm-terminal-vertical <program> [<arguments>]: create a new terminal as a wezterm pane
+		wezterm-terminal-vertical <program> [<arguments>]: create a new terminal as a WezTerm pane
 		The current pane is split into two, top and bottom
 		The program passed as argument will be executed in the new terminal' \
 	%{
@@ -21,7 +21,7 @@ provide-module wezterm %{
 	}
 
 	define-command wezterm-terminal-horizontal -params 1.. -shell-completion -docstring '
-		wezterm-terminal-horizontal <program> [<arguments>]: create a new terminal as a wezterm pane
+		wezterm-terminal-horizontal <program> [<arguments>]: create a new terminal as a WezTerm pane
 		The current pane is split into two, left and right
 		The program passed as argument will be executed in the new terminal' \
 	%{
@@ -31,7 +31,7 @@ provide-module wezterm %{
 	}
 
 	define-command wezterm-terminal-window -params 1.. -shell-completion -docstring '
-		wezterm-terminal-window <program> [<arguments>]: create a new terminal as a wezterm window
+		wezterm-terminal-window <program> [<arguments>]: create a new terminal as a WezTerm window
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
@@ -40,7 +40,7 @@ provide-module wezterm %{
 	}
 
 	define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
-		wezterm-terminal-tab <program> [<arguments>]: create a new terminal as a wezterm tab
+		wezterm-terminal-tab <program> [<arguments>]: create a new terminal as a WezTerm tab
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
@@ -55,7 +55,7 @@ provide-module wezterm %{
 	# %{}
 
 	define-command wezterm-integration-enable -docstring '
-		wezterm-integration-enable: enable aliases for wezterm integration' \
+		wezterm-integration-enable: enable aliases for WezTerm integration' \
 	%{
 		alias global terminal wezterm-terminal-vertical
 		alias global terminal-window wezterm-terminal-window
