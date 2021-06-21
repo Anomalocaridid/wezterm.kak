@@ -3,6 +3,7 @@
 # Inspired by Kakoune's included windowing modules
 
 # ensure that we're running on WezTerm
+remove-hooks global wezterm-detection
 hook -group wezterm-detection global ClientCreate '.*' %{
 	trigger-user-hook "TERM_PROGRAM=%val{client_env_TERM_PROGRAM}"
 }
@@ -55,6 +56,7 @@ define-command -hidden wezterm -params .. -docstring '
 define-command wezterm-integration-enable -docstring '
 	wezterm-integration-enable: enable WezTerm integration' \
 %{
+	remove-hooks global wezterm-integration
 	hook -group wezterm-integration global User 'TERM_PROGRAM=WezTerm' %{
 		alias global terminal wezterm-terminal-vertical
 		alias global terminal-window wezterm-terminal-window
