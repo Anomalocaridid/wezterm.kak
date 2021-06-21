@@ -4,7 +4,7 @@
 
 provide-module wezterm %{
 
-	#ensure that we're running on wezterm
+	# ensure that we're running on wezterm
 	evaluate-commands %sh{
 		[ "$TERM_PROGRAM" = "WezTerm" ] || echo 'fail WezTerm not detected'
 	}
