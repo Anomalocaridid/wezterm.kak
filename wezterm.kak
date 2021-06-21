@@ -16,7 +16,7 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane --cwd "$PWD" -- "$@" 
+			wezterm cli split-pane --cwd "$PWD" -- "$@"
 		}
 	}
 
@@ -26,7 +26,7 @@ provide-module wezterm %{
 		The program passed as argument will be executed in the new terminal' \
 	%{
 		nop %sh{
-			wezterm cli split-pane --horizontal --cwd "$PWD" -- "$@" 
+			wezterm cli split-pane --horizontal --cwd "$PWD" -- "$@"
 		}
 	}
 
@@ -60,6 +60,6 @@ provide-module wezterm %{
 		alias global terminal wezterm-terminal-vertical
 		alias global terminal-window wezterm-terminal-window
 		alias global terminal-tab wezterm-terminal-tab
-		# alias global focus wezterm-focus 
+		# alias global focus wezterm-focus
 	}
 }
