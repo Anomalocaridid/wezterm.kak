@@ -20,6 +20,7 @@ Currently, only splitting the window into panes, and opening a command in a new 
 * `wezterm-terminal-horizontal` - splits the current window horizontally and runs a given program
 * `wezterm-terminal-window` - opens a new instance of WezTerm and runs the given command in it; aliased to `terminal-window`
 * `wezterm-terminal-tab` - opens a new tab and runs the given program in it; aliased to `terminal-tab`
+* `wezterm-terminal-popup` - opens a new popup and runs the given program in it; aliased to `popup`
 
 # TODO
 * Add the command `wezterm-focus` that focuses a given client and alias it to `focus` in `wezterm-integration-enable`

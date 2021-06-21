@@ -39,6 +39,13 @@ define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
 	wezterm cli spawn --cwd %val{client_env_PWD} -- %arg{@}
 }
 
+define-command wezterm-terminal-popup -params 1.. -shell-completion -docstring '
+	wezterm-terminal-popup <program> [<arguments>]: create a new terminal as a WezTerm popup
+	The program passed as argument will be executed in the new terminal' \
+%{
+	wezterm cli spawn --cwd %val{client_env_PWD} -- %arg{@}
+}
+
 # TODO
 # define-command wezterm-focus -params ..1 -client-completion -docstring '
 # 	wezterm-focus [<client>]: focus the given client
@@ -61,6 +68,7 @@ define-command wezterm-integration-enable -docstring '
 		alias global terminal wezterm-terminal-vertical
 		alias global terminal-window wezterm-terminal-window
 		alias global terminal-tab wezterm-terminal-tab
+		alias global popup wezterm-terminal-popup
 		# alias global focus wezterm-focus
 	}
 }
