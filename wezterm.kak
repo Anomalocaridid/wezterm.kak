@@ -15,9 +15,7 @@ provide-module wezterm %{
 		The current pane is split into two, top and bottom
 		The program passed as argument will be executed in the new terminal' \
 	%{
-		nop %sh{
-			wezterm cli split-pane --cwd "$PWD" -- "$@"
-		}
+		wezterm cli split-pane --cwd %val{client_env_PWD} -- %arg{@}
 	}
 
 	define-command wezterm-terminal-horizontal -params 1.. -shell-completion -docstring '
@@ -25,27 +23,21 @@ provide-module wezterm %{
 		The current pane is split into two, left and right
 		The program passed as argument will be executed in the new terminal' \
 	%{
-		nop %sh{
-			wezterm cli split-pane --horizontal --cwd "$PWD" -- "$@"
-		}
+		wezterm cli split-pane --horizontal --cwd %val{client_env_PWD} -- %arg{@}
 	}
 
 	define-command wezterm-terminal-window -params 1.. -shell-completion -docstring '
 		wezterm-terminal-window <program> [<arguments>]: create a new terminal as a WezTerm window
 		The program passed as argument will be executed in the new terminal' \
 	%{
-		nop %sh{
-			wezterm start --cwd "$PWD" -- "$@" &>/dev/null &
-		}
+		wezterm start --cwd %val{client_env_PWD} -- %arg{@}
 	}
 
 	define-command wezterm-terminal-tab -params 1.. -shell-completion -docstring '
 		wezterm-terminal-tab <program> [<arguments>]: create a new terminal as a WezTerm tab
 		The program passed as argument will be executed in the new terminal' \
 	%{
-		nop %sh{
-			wezterm cli spawn --cwd "$PWD" -- "$@"
-		}
+		wezterm cli spawn --cwd %val{client_env_PWD} -- %arg{@}
 	}
 
 	# TODO
