@@ -14,7 +14,8 @@ Otherwise, add it to your autoload folder or source it manually, making sure to 
 Currently, only splitting the window into panes, and opening a command in a new tab or window are supported. I was unable to find a way to use WezTerm's command-line interface to focus a given client or send text to a repl. Since WezTerm is fairly new, that functionality may not even be currently supported yet.
 
 ## Commands
-* `wezterm-integration-enable` - sets the other commands' aliases
+* `wezterm-integration-enable` - sets the other commands' aliases when running on WezTerm
+* `wezterm-integration-disable` - removes WezTerm integration hooks
 * `wezterm-terminal-vertical` - splits the current window vertically and runs a given program; aliased to `terminal`
 * `wezterm-terminal-horizontal` - splits the current window horizontally and runs a given program
 * `wezterm-terminal-window` - opens a new instance of WezTerm and runs the given command in it; aliased to `terminal-window`
