@@ -54,6 +54,14 @@ provide-module wezterm %{
 	# 	If no client is passed then the current one is used' \
 	# %{}
 
+	define-command -hidden wezterm -params .. -docstring '
+		wezterm [<flags>] [<options>] [<subcommand>]: run WezTerm' \
+	%{
+		nop %sh{
+			wezterm "$@" < /dev/null > /dev/null 2>&1 &
+		}
+	}
+
 	define-command wezterm-integration-enable -docstring '
 		wezterm-integration-enable: enable aliases for WezTerm integration' \
 	%{
