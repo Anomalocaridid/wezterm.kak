@@ -22,10 +22,10 @@ Currently, only splitting the window into panes, and opening a command in a new 
 * `wezterm-terminal-tab` - opens a new tab and runs the given program in it; aliased to `terminal-tab`
 
 ## Options
-* `wezterm_terminal_command` - sets the `terminal` alias's value; can be used in kakrc to specify a desired default value; set to `wezterm-terminal-vertical` by default
+* `wezterm_terminal_default` - setss the `terminal` alias's default value; set to `wezterm-terminal-vertical` by default
 
 ## User Mode
-* `wezterm` - used to set the `wezterm_terminal_command` option on the fly
+* `wezterm` - used to set the terminal alias on the fly
 	* `v` - sets it to `wezterm-terminal-vertical`
 	* `h` - sets it to `wezterm-terminal-horizontal`
 	* `w` - sets it to `wezterm-terminal-window`
