@@ -59,7 +59,7 @@ define-command wezterm-integration-enable -docstring '
 	wezterm-integration-enable: enable WezTerm integration' \
 %{
 	remove-hooks global wezterm-integration
-	hook -group wezterm-integration global User 'TERM_PROGRAM=WezTerm' %{
+	hook -once -group wezterm-integration global User 'TERM_PROGRAM=WezTerm' %{
 		alias global terminal %opt{wezterm_terminal_default}
 		alias global terminal-window wezterm-terminal-window
 		alias global terminal-tab wezterm-terminal-tab
