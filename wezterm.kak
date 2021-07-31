@@ -53,12 +53,14 @@ define-command -hidden wezterm -params .. -docstring '
 	}
 }
 
+declare-option -docstring 'wezterm_terminal_default: default command to use for terminal alias' str wezterm_terminal_default 'wezterm-terminal-vertical'
+
 define-command wezterm-integration-enable -docstring '
 	wezterm-integration-enable: enable WezTerm integration' \
 %{
 	remove-hooks global wezterm-integration
-	hook -group wezterm-integration global User 'TERM_PROGRAM=WezTerm' %{
-		alias global terminal wezterm-terminal-vertical
+	hook -once -group wezterm-integration global User 'TERM_PROGRAM=WezTerm' %{
+		alias global terminal %opt{wezterm_terminal_default}
 		alias global terminal-window wezterm-terminal-window
 		alias global terminal-tab wezterm-terminal-tab
 		# alias global focus wezterm-focus
@@ -70,3 +72,16 @@ define-command wezterm-integration-disable -docstring '
 %{
 	remove-hooks global wezterm-integration
 }
+
+define-command -hidden wezterm-set-terminal-command -params 1 -docstring '
+	wezterm-set-terminal-command <command>: set the command used by the terminal alias' \
+%{
+	unalias global terminal
+	alias global terminal %arg{1}
+}
+
+declare-user-mode wezterm
+map -docstring 'vertical' global wezterm v ': wezterm-set-terminal-command wezterm-terminal-vertical<ret>'
+map -docstring 'horizontal' global wezterm h ' : wezterm-set-terminal-command wezterm-terminal-horizontal<ret>'
+map -docstring 'window' global wezterm w ' : wezterm-set-terminal-command wezterm-terminal-window<ret>'
+map -docstring 'tab' global wezterm t ' : wezterm-set-terminal-command wezterm-terminal-tab<ret>'

@@ -16,10 +16,20 @@ Currently, only splitting the window into panes, and opening a command in a new 
 ## Commands
 * `wezterm-integration-enable` - sets the other commands' aliases when running on WezTerm
 * `wezterm-integration-disable` - removes WezTerm integration hooks
-* `wezterm-terminal-vertical` - splits the current window vertically and runs a given program; aliased to `terminal`
+* `wezterm-terminal-vertical` - splits the current window vertically and runs a given program; aliased to `terminal` by default
 * `wezterm-terminal-horizontal` - splits the current window horizontally and runs a given program
 * `wezterm-terminal-window` - opens a new instance of WezTerm and runs the given command in it; aliased to `terminal-window`
 * `wezterm-terminal-tab` - opens a new tab and runs the given program in it; aliased to `terminal-tab`
+
+## Options
+* `wezterm_terminal_default` - sets the `terminal` alias's default value; set to `wezterm-terminal-vertical` by default
+
+## User Mode
+* `wezterm` - used to set the terminal alias on the fly
+	* `v` - sets it to `wezterm-terminal-vertical`
+	* `h` - sets it to `wezterm-terminal-horizontal`
+	* `w` - sets it to `wezterm-terminal-window`
+	* `t` - sets it to `wezterm-terminal-tab`
 
 # TODO
 * Add the command `wezterm-focus` that focuses a given client and alias it to `focus` in `wezterm-integration-enable`
