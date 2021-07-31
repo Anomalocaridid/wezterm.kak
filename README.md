@@ -22,7 +22,7 @@ Currently, only splitting the window into panes, and opening a command in a new 
 * `wezterm-terminal-tab` - opens a new tab and runs the given program in it; aliased to `terminal-tab`
 
 ## Options
-* `wezterm_terminal_default` - setss the `terminal` alias's default value; set to `wezterm-terminal-vertical` by default
+* `wezterm_terminal_default` - sets the `terminal` alias's default value; set to `wezterm-terminal-vertical` by default
 
 ## User Mode
 * `wezterm` - used to set the terminal alias on the fly
