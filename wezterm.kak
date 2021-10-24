@@ -7,6 +7,9 @@ remove-hooks global wezterm-detection
 hook -group wezterm-detection global ClientCreate '.*' %{
 	trigger-user-hook "TERM_PROGRAM=%val{client_env_TERM_PROGRAM}"
 }
+hook -group wezterm-detection global FocusIn '.*' %{
+	trigger-user-hook "TERM_PROGRAM=%val{client_env_TERM_PROGRAM}"
+}
 
 
 define-command wezterm-terminal-vertical -params 1.. -shell-completion -docstring '
