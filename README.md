@@ -1,6 +1,9 @@
 # wezterm.kak
 Provides basic [WezTerm](https://github.com/wez/wezterm) integration for Kakoune. Modeled after Kakoune's default windowing modules.
 
+# THIS REPO IS UNMAINTAINED
+I have started using a different editor for a while and I have had very little desire to develop or maintain this plugin ever since. I would like to thank everyone that used this and I am very glad that people other than I have found my plugin to be useful.
+
 # Installation
 With [plug.kak](https://github.com/andreyorst/plug.kak), add the following to your kakrc:
 
